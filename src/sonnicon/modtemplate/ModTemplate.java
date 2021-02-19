@@ -1,4 +1,4 @@
-package touhou-turretMod,core;
+package touhouturretMod,core;
 
 import mindustry.mod.Mod;
 
