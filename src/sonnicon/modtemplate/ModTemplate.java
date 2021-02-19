@@ -1,4 +1,4 @@
-package touhouturretMod,core;
+package touhouturretMod.core;
 
 import mindustry.mod.Mod;
 
