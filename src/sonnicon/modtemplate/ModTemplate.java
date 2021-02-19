@@ -1,4 +1,4 @@
-package sonnicon.modtemplate;
+package touhou-turretMod,core;
 
 import mindustry.mod.Mod;
 
