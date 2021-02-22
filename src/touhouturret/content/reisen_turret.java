@@ -56,30 +56,31 @@ public class ItemTurret extends Turret{
     public float burstSpacing = BS;
     public boolean targetAir = true;
     public boolean targetGround = true;
+    public class TurretBuild extends ReloadTurretBuild implements ControlBlock{
     
     
-    
-        public void displayBars(Table bars){
-            super.displayBars(bars);
+            public void displayBars(Table bars){
+                super.displayBars(bars);
 
-            bars.add(new Bar("stat.spell charge%", Pal.titanium, () -> (int)shotCounter / 30 )).growX();
-            bars.row();
-        }
-    @Override
-    public void updateTile() {
-        if (shotCounter == 30 && judge == true) {
-            int S;
-            float BS;
-            S = 3;
-            BS = 7;
-            judge = false;
-            shotCounter = 0;
-        }
-        if (shotCounter == 29) {
-            S = 7;
-            BS = 0;
-            boolean judge;
-            judge = true;
+                bars.add(new Bar("stat.spell charge%", Pal.titanium, () -> (int)shotCounter / 30 )).growX();
+             bars.row();
+            }
+        @Override
+        public void updateTile() {
+            if (shotCounter == 30 && judge == true) {
+                int S;
+                float BS;
+                S = 3;
+                BS = 7;
+                judge = false;
+                shotCounter = 0;
+            }
+            if (shotCounter == 29) {
+                S = 7;
+                BS = 0;
+                boolean judge;
+                judge = true;
+            }
         }
     }
 }
