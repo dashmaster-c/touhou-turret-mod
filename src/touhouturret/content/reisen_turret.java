@@ -34,10 +34,7 @@ import arc.struct.*;
 import arc.util.io.*;
 import static mindustry.Vars.*;
 
-int S;
-S = 3;
-float BS;
-BS = 7;
+
 
 public class ItemTurret extends Turret{
     public String name = "레이센 터렛";
@@ -72,13 +69,13 @@ public class ItemTurret extends Turret{
         }
     @Override
     public void updateTile() {
-        if (shotCounter == 31 && judge == true) {
+        if (shotCounter == 30 && judge == true) {
             S = 3;
             BS = 7;
             judge = false;
             shotCounter = 0;
         }
-        if (shotCounter == 30) {
+        if (shotCounter == 29) {
             S = 7;
             BS = 0;
             boolean judge;
