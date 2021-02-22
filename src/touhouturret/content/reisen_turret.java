@@ -34,15 +34,13 @@ import arc.struct.*;
 import arc.util.io.*;
 import static mindustry.Vars.*;
 
-
-
 public class ItemTurret extends Turret{
     public String name = "레이센 터렛";
-    
+    public Sound shootSound = Sounds.tan01;
     public Effect shootEffect = LancerLaserShootSmoke;
     public float width = 16f, height = 16f;
     public String sprite = reisenbullet;
-    public Sound shootSound = tan01;
+
     public float lifetime = 60f;
     public float speed = 6f;
     public float knockback = 1;
@@ -70,6 +68,8 @@ public class ItemTurret extends Turret{
     @Override
     public void updateTile() {
         if (shotCounter == 30 && judge == true) {
+            int S;
+            float BS;
             S = 3;
             BS = 7;
             judge = false;
