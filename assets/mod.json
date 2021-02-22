@@ -4,7 +4,7 @@
   "author": "dashmaster",
   "description": "동방 포탑 모드입니다, 노력해서 만들겠습니다! touhou turret mod!",
   "version": "1.0",
-  "main": "sonnicon.modtemplate.ModTemplate",
+  "main": "touhouturretMod.core.TDmain",
   "minGameVersion": "105",
   "dependencies": [],
   "hidden": false
