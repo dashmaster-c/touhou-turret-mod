@@ -2,7 +2,7 @@ package touhouturret.core;
 
 import mindustry.mod.Mod;
 
-public class ModTemplate extends Mod{
+public class TDmain extends Mod{
 
     @Override
     public void init(){
