@@ -1,39 +1,38 @@
 package touhouturret.content;
 import mindustry.ctype.ContentList;
 import mindustry.entities.bullet.*;
+import mindustry.type.Item;
+import mindustry.type.ItemStack;
 import mindustry.world.blocks.defense.turrets.*;
 import mindustry.ui.*;
 import arc.scene.ui.layout.*;
-
+import touhouturret.content.ReisenBullet;
 import static mindustry.graphics.Pal.lancerLaser;
 import static mindustry.Vars.*;
+import static touhouturret.content.ReisenBullet.*;
 
 public class reisen_turret extends Turret implements ContentList {
     /* 변수 생성 */
-    private static float BS =6;
-    private static int S =3;
-    private boolean judge = false;
+    protected float BS = 6;
+    protected int S = 3;
+    protected boolean judge = false;
+    @Override
+    public void load() {
+        String name = "레이센 터렛";
+        float range = 100f;
+        float rotateSpeed = 0;
+        boolean ignoreRotation = true;
+        float velocityRnd = 2f;
+        int maxAmmo = 30;
+        int ammoPerShot = 2;
+        int shots = S;
+        float burstSpacing = BS;
+        boolean targetAir = true;
+        boolean targetGround = true;
+        float reloadTime = 24f;
+        int size = 2;
 
-    public String name = "레이센 터렛";
-
-    public float width = 16f, height = 16f;
-    public float lifetime = 60f;
-    public float speed = 6f;
-    public float knockback = 1;
-    public float range = 100f;
-    public float rotateSpeed = 0;
-    public boolean ignoreRotation = true;
-    public float velocityRnd = 2f;
-    public int maxAmmo = 30;
-    public int ammoPerShot = 2;
-    public float inaccuracy = 5f;
-    public int shots = S;
-    public float burstSpacing = BS;
-    public boolean targetAir = true;
-    public boolean targetGround = true;
-    public float damage = 60;
-    public boolean pierce = false;
-    public float reloadTime = 24f;
+    }
 
 
     /* 새로운 클래스 만들기. */
@@ -51,15 +50,15 @@ public class reisen_turret extends Turret implements ContentList {
         if (timers == 240 && judge) {
             S = 3;
             BS = 6;
-            this.judge = false;
-            this.pierce = false;
+            judge = false;
+            PE = false;
             timers = 0;
         }
         if (timers == 200) {
             S = 7;
             BS = 0;
-            this.judge = true;
-            this.pierce = true;
+            judge = true;
+            PE = true;
         }
     }
 }
