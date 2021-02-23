@@ -1,4 +1,5 @@
 package touhouturret.content;
+import mindustry.ctype.ContentList;
 import mindustry.entities.bullet.*;
 import mindustry.world.blocks.defense.turrets.*;
 import mindustry.ui.*;
@@ -7,7 +8,7 @@ import arc.scene.ui.layout.*;
 import static mindustry.graphics.Pal.lancerLaser;
 import static mindustry.Vars.*;
 
-public class reisen_turret extends Turret {
+public class reisen_turret extends Turret implements ContentList {
     /* 변수 생성 */
     private static float BS =6;
     private static int S =3;
