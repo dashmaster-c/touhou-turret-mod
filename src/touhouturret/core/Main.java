@@ -6,7 +6,7 @@ package touhouturret.core;
 
   
 
-public class TDmain extends Mod{
+public class Main extends Mod{
 
     @Override
     public void init(){
