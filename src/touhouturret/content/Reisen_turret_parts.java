@@ -3,6 +3,7 @@ package touhouturret.content;
 import arc.scene.ui.layout.Table;
 import mindustry.ui.Bar;
 import mindustry.world.blocks.defense.turrets.Turret;
+import static mindustry.world.blocks.defense.turrets.Turret.*;
 import static touhouturret.content.ReisenBullet.*;
 import static mindustry.graphics.Pal.lancerLaser;
 import arc.*;
