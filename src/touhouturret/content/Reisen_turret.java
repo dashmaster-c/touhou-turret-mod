@@ -16,14 +16,13 @@ public class Reisen_turret implements ContentList {
     public static Block Reisen_turret;
     @Override
     public void load(){
-        Reisen_turret = new Reisen_turret_parts("레이센 터렛"){
+        Reisen_turret = new Reisen_turret_parts("Reisen"){
             {
                 ammo(
                         Items.titanium, ReisenBullet.ReisenBullet
                 );
                 range = 100f;
                 rotateSpeed = 50;
-                velocityInaccuracy = 2f;
                 maxAmmo = 30;
                 ammoPerShot = 2;
                 shots = S;

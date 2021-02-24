@@ -64,14 +64,14 @@ public class Reisen_turret_parts extends Turret{
         public void updateTile(){
             unit.ammo((float)unit.type().ammoCapacity*totalAmmo/maxAmmo);
 
-            if(timers==240&&judge){
+            if(shotCounter==22&&judge){
                 S=3;
                 BS=6;
                 judge=false;
                 PE=false;
-                timers=0;
+                shotCounter=0;
             }
-            if(timers==200){
+            if(shotCounter==15){
                 S=7;
                 BS=0;
                 judge=true;
@@ -83,7 +83,8 @@ public class Reisen_turret_parts extends Turret{
         @Override
         public void displayBars(Table bars){
             super.displayBars(bars);
-            bars.add(new Bar("stat.spell charge%",lancerLaser,()->(float)timers/200)).growX();
+            bars.add(new Bar("spell charge%",Pal.power,()->shotCounter/15)).growX();
+            bars.row();
             bars.add(new Bar("stat.ammo",Pal.ammo,()->(float)totalAmmo/maxAmmo)).growX();
             bars.row();
         }

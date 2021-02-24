@@ -1,6 +1,5 @@
 package touhouturret.content;
 
-
 import mindustry.ctype.ContentList;
 import mindustry.entities.bullet.BasicBulletType;
 import mindustry.entities.bullet.BulletType;
@@ -22,7 +21,6 @@ public class ReisenBullet implements ContentList {
                 inaccuracy = 5f;
                 damage = 60;
                 pierce = PE;
-                sprite = "reisenbullet";
             }};
 
     }
