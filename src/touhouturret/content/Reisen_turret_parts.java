@@ -55,7 +55,7 @@ public class Reisen_turret_parts extends Turret{
             public void build(Building tile, Table table){
                 MultiReqImage image = new MultiReqImage();
                 content.items().each(i -> filter.get(i) && i.unlockedNow(), item -> image.add(new ReqImage(new ItemImage(item.icon(Cicon.medium)),
-                        () -> tile instanceof ItemTurretBuild it && !it.ammo.isEmpty() && ((ItemEntry)it.ammo.peek()).item == item)));
+                        () ->(tile instanceof ItemTurretBuild it) && !it.ammo.isEmpty() && (((ItemEntry)it.ammo.peek()).item==item))));
 
                 table.add(image).size(8 * 4);
             }
@@ -63,7 +63,7 @@ public class Reisen_turret_parts extends Turret{
             @Override
             public boolean valid(Building entity){
                 //valid when there's any ammo in the turret
-                return entity instanceof ItemTurretBuild it && !it.ammo.isEmpty();
+                return (entity instanceof ItemTurretBuild it) && !it.ammo.isEmpty();
             }
 
             @Override
