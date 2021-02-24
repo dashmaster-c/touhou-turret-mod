@@ -6,8 +6,8 @@ import mindustry.ctype.*;
 
 public class TDloader implements ContentList{
     private final ContentList[] contents = {
-            new reisen_turret("reisen_turret")
-
+            new ReisenBullet(),
+            new Reisen_turret()
     };
 
     public void load(){
