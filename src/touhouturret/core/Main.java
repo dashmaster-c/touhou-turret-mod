@@ -1,7 +1,7 @@
 package touhouturret.core;
   //불러오기
   import mindustry.mod.Mod;
-  import touhouturret.content.TDloader;
+  import touhouturret.content.ModLoader;
 
 
   
@@ -14,6 +14,6 @@ public class Main extends Mod{
 
     @Override
     public void loadContent(){
-      new TDloader().load();
+      new ModLoader().load();
     }
 }

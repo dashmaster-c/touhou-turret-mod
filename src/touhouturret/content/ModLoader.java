@@ -4,7 +4,7 @@ import mindustry.ctype.*;
 
 
 
-public class TDloader implements ContentList{
+public class ModLoader implements ContentList{
     private final ContentList[] contents = {
             new ReisenBullet(),
             new Reisen_turret()
