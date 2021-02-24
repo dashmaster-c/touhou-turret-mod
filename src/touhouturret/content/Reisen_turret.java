@@ -1,19 +1,8 @@
 package touhouturret.content;
 import mindustry.ctype.ContentList;
-import mindustry.entities.bullet.*;
-import mindustry.type.Weapon;
-import mindustry.type.ItemStack;
+
 import mindustry.world.Block;
-import mindustry.world.blocks.defense.turrets.*;
-import static mindustry.world.blocks.defense.turrets.Turret.*;
-import mindustry.ui.*;
-import arc.scene.ui.layout.*;
-import touhouturret.content.ReisenBullet;
-import static mindustry.graphics.Pal.lancerLaser;
-import static mindustry.Vars.*;
-import static touhouturret.content.ReisenBullet.*;
-import static touhouturret.content.Reisen_turret_parts.*;
-import static mindustry.type.Weapon.*;
+
 
 public class Reisen_turret implements ContentList {
     /* 변수 생성 */
