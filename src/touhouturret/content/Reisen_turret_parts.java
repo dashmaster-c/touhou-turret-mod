@@ -23,8 +23,8 @@ import mindustry.world.meta.values.*;
 import static mindustry.Vars.*;
 
 public class Reisen_turret_parts extends Turret{
-    protected static float BS=6;
-    protected static int S=3;
+    public static float BS=6;
+    public static int S=3;
     public static boolean judge=false;
 
     public ObjectMap<Item,BulletType> ammoTypes=new ObjectMap<>();
@@ -63,7 +63,7 @@ public class Reisen_turret_parts extends Turret{
         @Override
         public void updateTile(){
             unit.ammo((float)unit.type().ammoCapacity*totalAmmo/maxAmmo);
-
+            super.updateTile();
             if(shotCounter==22&&judge){
                 S=3;
                 BS=6;
@@ -71,19 +71,18 @@ public class Reisen_turret_parts extends Turret{
                 PE=false;
                 shotCounter=0;
             }
-            if(shotCounter==15){
+            if(shotCounter>=15){
                 S=7;
                 BS=0;
                 judge=true;
                 PE=true;
             }
-            super.updateTile();
         }
 
         @Override
         public void displayBars(Table bars){
             super.displayBars(bars);
-            bars.add(new Bar("spell charge%",Pal.power,()->shotCounter/15)).growX();
+            bars.add(new Bar("spell charge%",Pal.powerBar,()->shotCounter/15)).growX();
             bars.row();
             bars.add(new Bar("stat.ammo",Pal.ammo,()->(float)totalAmmo/maxAmmo)).growX();
             bars.row();
