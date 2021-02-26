@@ -53,14 +53,14 @@ public class Reisen_turret_parts extends Turret{
 
     @Override
     public void init(){
-        consumes.add(new ConsumeItemFilter ( i -> ammoTypes.containsKey(i)){
+        consumes.add ( new ConsumeItemFilter ( i -> ammoTypes.containsKey ( i ) ){
             @Override
-            public void build(Building tile, Table table){
-                MultiReqImage image = new MultiReqImage();
-                content.items().each(i -> filter.get(i) && i.unlockedNow(), item -> image.add(new ReqImage(new ItemImage(item.icon(Cicon.medium)),
-                        () -> tile instanceof ItemTurretBuild it && !it.ammo.isEmpty() && ((ItemEntry)it.ammo.peek()).item == item)));
+            public void build(Building tile,Table table){
+                MultiReqImage image = new MultiReqImage ();
+                content.items ().each ( i -> filter.get ( i ) && i.unlockedNow (),item -> image.add ( new ReqImage ( new ItemImage ( item.icon ( Cicon.medium ) ),
+                        () -> tile instanceof ItemTurretBuild it && ! it.ammo.isEmpty () && ((ItemEntry)it.ammo.peek ()).item == item ) ) );
 
-                table.add(image).size(8 * 4);
+                table.add ( image ).size ( 8 * 4 );
             }
 
             @Override
