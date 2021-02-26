@@ -29,7 +29,6 @@ import static mindustry.Vars.content;
 public class Reisen_turret_parts extends Turret{
     public static float BS = 6;
     public static int S = 3;
-    private final int SCL = 15;
     public static float vel_In = 0;
     public ObjectMap<Item, BulletType> ammoTypes = new ObjectMap<>();
 
@@ -118,7 +117,7 @@ public class Reisen_turret_parts extends Turret{
 
             bars.add(new Bar("stat.ammo", Pal.ammo, () -> (float)totalAmmo / maxAmmo)).growX();
             bars.row();
-            bars.add(new Bar("Spell Charge %", Pal.lightPyraFlame, () -> (float)shotCounter / SCL)).growX ();
+            bars.add(new Bar("Spell Charge %", Pal.lightPyraFlame,this::get )).growX ();
             bars.row();
         }
 
@@ -205,6 +204,11 @@ public class Reisen_turret_parts extends Turret{
                     ammo.add(new ItemEntry(item, a));
                 }
             }
+        }
+
+        private float get(){
+            int SCL = 15;
+            return (float)shotCounter / SCL;
         }
     }
 
