@@ -16,7 +16,7 @@ public class ReisenBullet implements ContentList {
             {{
                 height = 16;
                 width = 16;
-                speed = 6f;
+                speed = 7f;
                 knockback = 1;
                 inaccuracy = 5f;
                 damage = 60;

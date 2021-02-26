@@ -11,6 +11,7 @@ import static mindustry.type.ItemStack.with;
 
 
 public class Reisen_turret implements ContentList {
+    public static float Reloader = 24f;
     /* 변수 생성 */
 
     public static Block Reisen_turret;
@@ -29,10 +30,11 @@ public class Reisen_turret implements ContentList {
                 burstSpacing = BS;
                 targetAir = true;
                 targetGround = true;
-                reloadTime = 24f;
+                reloadTime = Reloader;
+                velocityInaccuracy = vel_In;
                 size = 2;
 
-                requirements(Category.turret, with(Items.copper,120,Items.titanium,70,Items.lead,100,Items.graphite,95));
+                requirements(Category.turret, with(Items.copper, 120,Items.titanium, 70,Items.lead, 100,Items.graphite, 95));
             }
         };
     }}
