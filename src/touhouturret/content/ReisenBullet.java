@@ -6,7 +6,6 @@ import mindustry.entities.bullet.BulletType;
 
 
 public class ReisenBullet implements ContentList {
-    public static boolean PE = false;
     public static BulletType ReisenBullet;
 
 
@@ -20,7 +19,6 @@ public class ReisenBullet implements ContentList {
                 knockback = 1;
                 inaccuracy = 5f;
                 damage = 60;
-                pierce = PE;
             }};
 
     }

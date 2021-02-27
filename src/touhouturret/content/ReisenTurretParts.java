@@ -20,20 +20,18 @@ import mindustry.world.consumers.ConsumeItemFilter;
 import mindustry.world.meta.Stat;
 import mindustry.world.meta.Stats;
 import mindustry.world.meta.values.AmmoListValue;
-
-import static touhouturret.content.ReisenBullet.PE;
-import static touhouturret.content.Reisen_turret.*;
+import static touhouturret.content.ReisenTurret.*;
 import static mindustry.Vars.content;
 
 
-public class Reisen_turret_parts extends Turret{
-    public static float BS;
-    public static int S;
-    public static float vel_In;
+public class ReisenTurretParts extends Turret{
+    public float BS=6;
+    public int S=3;
+    public float vel_In;
     public ObjectMap<Item, BulletType> ammoTypes = new ObjectMap<>();
     private float SCunt;
 
-    public Reisen_turret_parts(String name){
+    public ReisenTurretParts(String name){
         super(name);
         hasItems = true;
     }
@@ -58,7 +56,7 @@ public class Reisen_turret_parts extends Turret{
             public void build(Building tile,Table table){
                 MultiReqImage image = new MultiReqImage ();
                 content.items ().each ( i -> filter.get ( i ) && i.unlockedNow (),item -> image.add ( new ReqImage ( new ItemImage ( item.icon ( Cicon.medium ) ),
-                        () -> tile instanceof ItemTurretBuild && !((ItemTurretBuild) tile).ammo.isEmpty () && ((ItemEntry)((ItemTurretBuild) tile).ammo.peek ()).item == item ) ) );
+                        () -> tile instanceof ItemTurretBuild && ! ((ItemTurretBuild)tile).ammo.isEmpty () && ((ItemEntry)((ItemTurretBuild)tile).ammo.peek ()).item == item ) ) );
 
                 table.add ( image ).size ( 8 * 4 );
             }
@@ -66,16 +64,16 @@ public class Reisen_turret_parts extends Turret{
             @Override
             public boolean valid(Building entity){
                 //valid when there's any ammo in the turret
-                return entity instanceof ItemTurretBuild && !((ItemTurretBuild) entity).ammo.isEmpty();
+                return entity instanceof ItemTurretBuild && ! ((ItemTurretBuild)entity).ammo.isEmpty ();
             }
 
             @Override
             public void display(Stats stats){
                 //don't display
             }
-        });
+        } );
 
-        super.init();
+        super.init ();
     }
 
     public class ItemTurretBuild extends TurretBuild{
@@ -99,14 +97,12 @@ public class Reisen_turret_parts extends Turret{
                 S=7;
                 vel_In=0.8F;
                 Reloader=10f;
-                PE=true;
             }
             if(SCunt == 480){
                 BS=6;
                 S=3;
                 vel_In=0f;
                 Reloader=24f;
-                PE=false;
                 SCunt=0;
             }
 

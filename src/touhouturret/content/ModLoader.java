@@ -7,7 +7,7 @@ import mindustry.ctype.*;
 public class ModLoader implements ContentList{
     private final ContentList[] contents = {
             new ReisenBullet(),
-            new Reisen_turret()
+            new ReisenTurret ()
     };
 
     public void load(){

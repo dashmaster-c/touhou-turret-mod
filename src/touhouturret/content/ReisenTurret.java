@@ -2,22 +2,20 @@ package touhouturret.content;
 import mindustry.content.Items;
 import mindustry.ctype.ContentList;
 
-import mindustry.entities.bullet.BulletType;
 import mindustry.type.Category;
 import mindustry.world.Block;
 
-import static mindustry.content.Items.*;
 import static mindustry.type.ItemStack.with;
 
 
-public class Reisen_turret implements ContentList {
+public class ReisenTurret implements ContentList {
     public static float Reloader = 24f;
     /* 변수 생성 */
 
     public static Block Reisen_turret;
     @Override
     public void load(){
-        Reisen_turret = new Reisen_turret_parts("Reisen"){
+        Reisen_turret = new ReisenTurretParts ("Reisen"){
             {
                 ammo(
                         Items.titanium, ReisenBullet.ReisenBullet
