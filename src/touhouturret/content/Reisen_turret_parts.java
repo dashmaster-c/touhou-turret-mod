@@ -31,6 +31,7 @@ public class Reisen_turret_parts extends Turret{
     public static int S = 3;
     public static float vel_In = 0;
     public ObjectMap<Item, BulletType> ammoTypes = new ObjectMap<>();
+    private float SCunt;
 
     public Reisen_turret_parts(String name){
         super(name);
@@ -92,20 +93,21 @@ public class Reisen_turret_parts extends Turret{
         @Override
         public void updateTile(){
             unit.ammo((float)unit.type().ammoCapacity * totalAmmo / maxAmmo);
-            if (shotCounter == 15){
+            SCunt++;
+            if (SCunt == 300){
                 BS=1;
                 S=7;
                 vel_In=0.8F;
                 Reloader=10f;
                 PE=true;
             }
-            if(shotCounter == 50){
+            if(SCunt == 480){
                 BS=6;
                 S=3;
                 vel_In=0f;
                 Reloader=24f;
                 PE=false;
-                shotCounter=0;
+                SCunt=0;
             }
 
             super.updateTile();
@@ -117,7 +119,7 @@ public class Reisen_turret_parts extends Turret{
 
             bars.add(new Bar("stat.ammo", Pal.ammo, () -> (float)totalAmmo / maxAmmo)).growX();
             bars.row();
-            bars.add(new Bar("Spell Charge %", Pal.lightPyraFlame,this::get )).growX ();
+            bars.add(new Bar("Spell Charge %", Pal.lightPyraFlame, () -> SCunt / 300)).growX ();
             bars.row();
         }
 
@@ -204,11 +206,6 @@ public class Reisen_turret_parts extends Turret{
                     ammo.add(new ItemEntry(item, a));
                 }
             }
-        }
-
-        private float get(){
-            int SCL = 15;
-            return (float)shotCounter / SCL;
         }
     }
 
