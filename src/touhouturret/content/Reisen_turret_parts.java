@@ -27,9 +27,9 @@ import static mindustry.Vars.content;
 
 
 public class Reisen_turret_parts extends Turret{
-    public static float BS = 6;
-    public static int S = 3;
-    public static float vel_In = 0;
+    public static float BS;
+    public static int S;
+    public static float vel_In;
     public ObjectMap<Item, BulletType> ammoTypes = new ObjectMap<>();
     private float SCunt;
 
